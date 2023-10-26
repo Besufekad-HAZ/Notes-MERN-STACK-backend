@@ -2,20 +2,20 @@ const Note = require('../models/Note')
 const User = require('../models/User')
 const asyncHandler = require('express-async-handler')
 
-// @desc Get all notes
+// @desc Get all notes 
 // @route GET /notes
 // @access Private
 const getAllNotes = asyncHandler(async (req, res) => {
     // Get all notes from MongoDB
     const notes = await Note.find().lean()
 
-    // If no notes
+    // If no notes 
     if (!notes?.length) {
         return res.status(400).json({ message: 'No notes found' })
     }
 
-    // Add username to each note before sending the response
-    // See Promise.all with map() here: https://youtu.be/4lqJBBEpjRE
+    // Add username to each note before sending the response 
+    // See Promise.all with map() here: https://youtu.be/4lqJBBEpjRE 
     // You could also do this with a for...of loop
     const notesWithUser = await Promise.all(notes.map(async (note) => {
         const user = await User.findById(note.user).lean().exec()
@@ -43,10 +43,10 @@ const createNewNote = asyncHandler(async (req, res) => {
         return res.status(409).json({ message: 'Duplicate note title' })
     }
 
-    // Create and store the new user
+    // Create and store the new user 
     const note = await Note.create({ user, title, text })
 
-    if (note) { // Created
+    if (note) { // Created 
         return res.status(201).json({ message: 'New note created' })
     } else {
         return res.status(400).json({ message: 'Invalid note data received' })
@@ -75,7 +75,7 @@ const updateNote = asyncHandler(async (req, res) => {
     // Check for duplicate title
     const duplicate = await Note.findOne({ title }).lean().exec()
 
-    // Allow renaming of the original note
+    // Allow renaming of the original note 
     if (duplicate && duplicate?._id.toString() !== id) {
         return res.status(409).json({ message: 'Duplicate note title' })
     }
@@ -101,7 +101,7 @@ const deleteNote = asyncHandler(async (req, res) => {
         return res.status(400).json({ message: 'Note ID required' })
     }
 
-    // Confirm note exists to delete
+    // Confirm note exists to delete 
     const note = await Note.findById(id).exec()
 
     if (!note) {
