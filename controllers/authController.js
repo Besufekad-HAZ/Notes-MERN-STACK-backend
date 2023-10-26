@@ -11,7 +11,7 @@ const login = asyncHandler(async (req, res) => {
 
     if (!username || !password) {
         return res.status(400).json({ message: 'All fields are required' })
-    }
+    } 
 
     const foundUser = await User.findOne({ username }).exec()
 
@@ -40,15 +40,15 @@ const login = asyncHandler(async (req, res) => {
         { expiresIn: '7d' }
     )
 
-    // Create secure cookie with refresh token 
+    // Create secure cookie with refresh token
     res.cookie('jwt', refreshToken, {
-        httpOnly: true, //accessible only by web server 
+        httpOnly: true, //accessible only by web server
         secure: true, //https
-        sameSite: 'None', //cross-site cookie 
+        sameSite: 'None', //cross-site cookie
         maxAge: 7 * 24 * 60 * 60 * 1000 //cookie expiry: set to match rT
     })
 
-    // Send accessToken containing username and roles 
+    // Send accessToken containing username and roles
     res.json({ accessToken })
 })
 
