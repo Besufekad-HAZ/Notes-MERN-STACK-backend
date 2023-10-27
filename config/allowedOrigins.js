@@ -1,7 +1,6 @@
 const allowedOrigins = [
     'http://127.0.0.1:5173',
-    'https://www.dandrepairshop.com',
-    'https://dandrepairshop.com',
+    'https://bemni-tech-repair.onrender.com/',
     'chrome-extension://gmmkjpcadciiokjpikmkkmapphbmdjok'
 ]
 
