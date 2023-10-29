@@ -12,9 +12,9 @@
 10. [x] Notes are assigned to specific users
 11. [x] Notes have a ticket #, title, note body, created & updated dates
 12. [x] Notes are either OPEN or COMPLETED
-13. [ ] Users can be Employees, Managers, or Admins
-14. [ ] Notes can only be deleted by Managers or Admins
-15. [ ] Anyone can create a note (when customer checks-in)
+13. [x] Users can be Employees, Managers, or Admins
+14. [x] Notes can only be deleted by Managers or Admins
+15. [x] Anyone can create a note (when customer checks-in)
 16. [ ] Employees can only view and edit their assigned notes
 17. [ ] Managers and Admins can view, edit, and delete all notes
 18. [ ] Only Managers and Admins can access User Settings
