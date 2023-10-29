@@ -15,8 +15,8 @@
 13. [x] Users can be Employees, Managers, or Admins
 14. [x] Notes can only be deleted by Managers or Admins
 15. [x] Anyone can create a note (when customer checks-in)
-16. [ ] Employees can only view and edit their assigned notes
-17. [ ] Managers and Admins can view, edit, and delete all notes
-18. [ ] Only Managers and Admins can access User Settings
-19. [ ] Only Managers and Admins can create new users
-20. [ ] Desktop mode is most important but should be available in mobile
+16. [x] Employees can only view and edit their assigned notes
+17. [x] Managers and Admins can view, edit, and delete all notes
+18. [x] Only Managers and Admins can access User Settings
+19. [x] Only Managers and Admins can create new users
+20. [x] Desktop mode is most important but should be available in mobile
